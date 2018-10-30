@@ -1,4 +1,4 @@
-# AEM Docker 
+# AEM Docker
 
 This project creates a base AEM image that can be used to make author and publish instances.
 
