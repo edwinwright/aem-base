@@ -27,4 +27,7 @@ Run the following build command in the project root.
 ```sh
 # Build AEM base image
 docker build -t aem-base:6.3 .
+
+# Start a container
+docker run --rm aem-base:6.3 
 ```
