@@ -15,7 +15,7 @@ Make sure you have Docker installed on your system.
 
 The following files are required, but are not included in the repository. Copy them into the project before building the image.
 
-* files/cq-6.3.0-quickstart.jar
+* files/cq-6.4.0-quickstart.jar
 * files/license.properties
 
 ---
@@ -26,5 +26,5 @@ Run the following build command in the project root.
 
 ```sh
 # Build AEM base image
-docker build -t aem-base:6.3 .
+docker build -t aem-base:6.4 .
 ```
