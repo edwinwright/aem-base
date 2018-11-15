@@ -15,8 +15,8 @@ Make sure you have Docker installed on your system.
 
 The following files are required, but are not included in the repository. Copy them into the project before building the image.
 
-* files/cq-6.3.0-quickstart.jar
-* files/license.properties
+* files/6.3/cq-6.3.0-quickstart.jar
+* files/6.3/license.properties
 
 ---
 
