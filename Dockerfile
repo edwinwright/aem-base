@@ -3,7 +3,7 @@ FROM oracle/openjdk:8
 
 # Copy build files
 WORKDIR /opt/aem
-COPY files/cq-6.4.0-quickstart.jar files/license.properties ./
+COPY files/6.4/cq-6.4.0-quickstart.jar files/6.4/license.properties ./
 
 # Unpack AEM
 RUN java \
