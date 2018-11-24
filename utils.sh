@@ -1,17 +1,21 @@
 #!/bin/sh
 
-function aemStarted {
-    # TODO: Add a default value of CQ_PORT=4502 if no arg passed
-    # if [ "$1" ]; then
-    #     printf "Checking AEM on port ${1} "
-    # fi
-    CQ_PORT="$1"
+function aem_started {
+  PORT=${1:-4502}
+  printf "Checking AEM on port $PORT "
+  until [ "`curl --silent --head --fail --noproxy localhost --connect-timeout 1 http://admin:admin@localhost:$PORT/index.html | grep '302'`" != "" ]; do
+    printf ".";
+    sleep 5
+  done
+  printf "\n"
+  echo "AEM started"
+}
 
-    printf "Checking AEM on port $CQ_PORT "
-    until [ "`curl --silent --head --fail --noproxy localhost --connect-timeout 1 http://admin:admin@localhost:$CQ_PORT/index.html | grep '302'`" != "" ]; do
-        printf ".";
-        sleep 5
-    done
-    printf "\n"
-    printf "AEM started\n"
+function watch_log {
+  PATTERN=$1
+  echo "Watching log for /$PATTERN/"
+  LOG_FILE=/opt/aem/crx-quickstart/logs/error.log
+  touch $LOG_FILE
+  tail -n100 -f $LOG_FILE | sed "/$PATTERN/q" > /dev/null
+  echo "Log entry found"
 }

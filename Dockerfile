@@ -20,7 +20,7 @@ FROM oracle/openjdk:8
 # Copy files
 WORKDIR /opt/aem
 COPY --from=0 /opt/aem .
-COPY utils.sh .
+COPY utils.sh ./
 
 # Startup command
 CMD ["/bin/bash"]
