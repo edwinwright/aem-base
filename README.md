@@ -28,3 +28,9 @@ Run the following build command in the project root.
 # Build AEM base image
 docker build -t aem-base:6.4 .
 ```
+
+---
+
+### Links
+
+https://helpx.adobe.com/experience-manager/6-4/release-notes/sp-release-notes.html
